@@ -1,0 +1,39 @@
+/* ShortenUrl Form Styles */
+.form-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff; /* White background for the form */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #3498db; /* Primary color for the heading */
+  }
+  
+  .form-container input {
+    width: calc(100% - 20px);
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .form-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #3498db; /* Primary color for the button */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .form-container button:hover {
+    background-color: #2980b9; /* Darker shade of the primary color for hover effect */
+  }
+  

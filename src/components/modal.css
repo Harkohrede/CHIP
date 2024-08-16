@@ -1,0 +1,52 @@
+.modal {
+    position: fixed;
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+    animation-name: modalFadeIn;
+    animation-duration: 0.5s;
+  }
+  
+  .content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    max-width: 500px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation-name: modalSlideDown;
+    animation-duration: 0.5s;
+  }
+  
+  .close-btn {
+    display: block;
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    background-color: #fefefe;
+    width: 20px;
+    border: 0px;
+  }
+  
+  .close-btn:hover,
+  .close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  @keyframes modalFadeIn {
+    from { opacity: 0 }
+    to { opacity: 1 }
+  }
+  
+  @keyframes modalSlideDown {
+    from { transform: translateY(-50px); opacity: 0 }
+    to { transform: translateY(0); opacity: 1 }
+  }

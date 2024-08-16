@@ -1,0 +1,107 @@
+/* .container {
+  width: 100%;
+  height: 100%;
+  background-color: #34495e;
+}
+.header {
+   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 30px;
+  padding-block: 40px;
+  color: #ecf0f1;
+}
+.logo {
+  color: #e74c3c;
+  font-size: 30px;
+}
+button {
+  margin-inline: 20px;
+  width: 100px;
+  background-color: #1abc9c;
+  border: none;
+  border-radius: 10px;
+  color: #ecf0f1;
+} */
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #f8f9fa;
+}
+
+.home-container {
+  text-align: center;
+}
+
+/* Header Styles */
+.header {
+  background-color: #007BFF;
+  padding: 20px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.login-btn {
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-inline: 10px;
+}
+
+.login-btn:hover {
+  background-color: #00408f;
+}
+
+/* Hero Section Styles */
+.hero {
+  padding: 100px 20px;
+  background-color: #e9ecef;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #007BFF;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+.cta-btn {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cta-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #007BFF;
+  color: white;
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}

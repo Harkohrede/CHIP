@@ -17,8 +17,8 @@ const ShortenUrl = () => {
   const [customUrl, setCustomUrl] = useState('');
   const [Name, setName] = useState('');
   const [LongUrl, setLongUrl] = useState('');
-  const [shortUrl, setShortUrl] = useState('');
-  const [qrCodeDataUrl, setQrCodeDataUrl] = useState('');
+  const [, setShortUrl] = useState('');
+  const [, setQrCodeDataUrl] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

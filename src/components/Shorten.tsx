@@ -28,7 +28,7 @@ const ShortenUrl = () => {
       if (user) {
         const userId = user.uid;
         const Id = customUrl || nanoid(6);
-        const shortUrl = `http://localhost:5173/${Id}`;
+        const shortUrl = `http://https://chiply.vercel.app/${Id}`;
         const qrCodeUrl = await QRCode.toDataURL(shortUrl);
         const userShortenedUrlsRef = collection(
           db,

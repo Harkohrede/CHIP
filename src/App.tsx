@@ -7,12 +7,24 @@ import UserLinks from './components/Links';
 import AnalyticsChart from './components/AnalyticsChart';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from './firebaseConfig';
-// index.tsx or App.tsx
-import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from 'chart.js';
 
-// Register the components needed
-ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
-
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+);
 
 const PrivateRoute: React.FC<{ children: JSX.Element }> = ({ children }) => {
   const [user, loading] = useAuthState(auth);
@@ -24,13 +36,20 @@ const PrivateRoute: React.FC<{ children: JSX.Element }> = ({ children }) => {
 
 const App: React.FC = () => {
   return (
-        <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/links" element={<UserLinks/>}/>
-        <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
-        <Route path="/analytics" element={<AnalyticsChart/>} />
-        <Route path='/:id' element={<Redirect/>} />
-      </Routes>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/links" element={<UserLinks />} />
+      <Route
+        path="/dashboard"
+        element={
+          <PrivateRoute>
+            <Dashboard />
+          </PrivateRoute>
+        }
+      />
+      <Route path="/analytics" element={<AnalyticsChart />} />
+      <Route path="/:id" element={<Redirect />} />
+    </Routes>
   );
 };
 

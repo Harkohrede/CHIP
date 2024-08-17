@@ -1,4 +1,3 @@
-//shorten.tsx
 import React, { useState } from 'react';
 import {
   collection,
@@ -11,7 +10,7 @@ import QRCode from 'qrcode';
 import { db } from '../firebaseConfig';
 import { nanoid } from 'nanoid';
 import { auth } from '../firebaseConfig';
-import './shorten.css'
+import './shorten.css';
 
 const ShortenUrl = () => {
   const [customUrl, setCustomUrl] = useState('');
@@ -39,7 +38,7 @@ const ShortenUrl = () => {
         const newUrlRef = doc(userShortenedUrlsRef, Id);
 
         const publicUrlsRef = collection(db, 'LinkDATAS');
-      const newPublicUrlRef = doc(publicUrlsRef, Id);
+        const newPublicUrlRef = doc(publicUrlsRef, Id);
 
         if (customUrl) {
           const customUrlDoc = await getDoc(
@@ -57,17 +56,16 @@ const ShortenUrl = () => {
           qrCode: qrCodeUrl,
           clickCount: 0,
           createdAt: serverTimestamp(),
-          userId: userId, 
-        }
+          userId: userId,
+        };
         await setDoc(newUrlRef, linkData);
-        await setDoc(newPublicUrlRef,linkData);
+        await setDoc(newPublicUrlRef, linkData);
 
         setName('');
         setLongUrl('');
         setCustomUrl('');
         setShortUrl(shortUrl);
         setQrCodeDataUrl(qrCodeUrl);
-        //window.location.reload();
       }
     } catch (error) {
       console.error('Error generating short URL:', error);
@@ -75,7 +73,7 @@ const ShortenUrl = () => {
   };
 
   return (
-    <div className='form-container'>
+    <div className="form-container">
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -95,7 +93,9 @@ const ShortenUrl = () => {
           onChange={(e) => setCustomUrl(e.target.value)}
           placeholder="Enter a custom URl (optional)"
         />
-        <button type="submit" onClick={handleSubmit}>Shorten URL</button>
+        <button type="submit" onClick={handleSubmit}>
+          Shorten URL
+        </button>
       </form>
     </div>
   );

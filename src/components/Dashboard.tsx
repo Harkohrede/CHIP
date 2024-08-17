@@ -1,9 +1,7 @@
-//dashboard.tsx
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../firebaseConfig';
 import ShortenUrl from './Shorten';
-//import UserLinks from './Links';
 import { useNavigate } from 'react-router-dom';
 import './Dashboard.css';
 

@@ -1,12 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import { Bar } from 'react-chartjs-2';
-import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from 'chart.js';
 import { getFirestore, collection, query, getDocs } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
-import './AnalyticsChart.css'
+import './AnalyticsChart.css';
 
-ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+);
 
 const AnalyticsChart: React.FC = () => {
   const [chartData, setChartData] = useState<any>(null);
@@ -22,13 +37,13 @@ const AnalyticsChart: React.FC = () => {
 
         // Check if user is authenticated
         if (!user) {
-          setError("User not authenticated");
+          setError('User not authenticated');
           setLoading(false);
-          console.error("User not authenticated");
+          console.error('User not authenticated');
           return;
         }
 
-        console.log("Authenticated user:", user);
+        console.log('Authenticated user:', user);
 
         const userId = user.uid;
         const userLinksRef = collection(db, 'users', userId, 'LinkDATAS');
@@ -36,23 +51,23 @@ const AnalyticsChart: React.FC = () => {
 
         const querySnapshot = await getDocs(q);
 
-        // Check if there are any documents returned
+        // to check if document is empty
         if (querySnapshot.empty) {
-          setError("No data found for this user");
+          setError('No data found for this user');
           setLoading(false);
-          console.log("No data found for this user");
+          console.log('No data found for this user');
           return;
         }
 
-        // Prepare the data for Chart.js
+        // data for Chart.js
         const labels: string[] = [];
         const data: number[] = [];
 
         querySnapshot.forEach((doc) => {
           const urlData = doc.data();
-          labels.push(urlData.shortUrl); // Example: Use URL or a custom label
-          data.push(urlData.clickCount || 0); // Number of clicks (default to 0 if not present)
-          console.log("Link Data:", doc.id, "=>", urlData);
+          labels.push(urlData.shortUrl);
+          data.push(urlData.clickCount || 0);
+          console.log('Link Data:', doc.id, '=>', urlData);
         });
 
         setChartData({
@@ -70,9 +85,9 @@ const AnalyticsChart: React.FC = () => {
 
         setLoading(false);
       } catch (error) {
-        setError("Error fetching data");
+        setError('Error fetching data');
         setLoading(false);
-        console.error("Error fetching data:", error);
+        console.error('Error fetching data:', error);
       }
     };
 
@@ -94,13 +109,12 @@ const AnalyticsChart: React.FC = () => {
       },
     },
   };
-  
-  
+
   const navigate = useNavigate();
 
-  const handleDash = () =>{
-    navigate('/dashboard')
-  }
+  const handleDash = () => {
+    navigate('/dashboard');
+  };
 
   return (
     <div className="analytics-container">

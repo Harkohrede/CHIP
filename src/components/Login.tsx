@@ -1,16 +1,15 @@
-//Login
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebaseConfig';
-import './login.css'
-import './Signup'
+import './login.css';
+import './Signup';
 
 interface LoginProps {
   onSignupClick: () => void;
 }
 
-const Login: React.FC <LoginProps> = ({onSignupClick}) => {
+const Login: React.FC<LoginProps> = ({ onSignupClick }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -34,13 +33,13 @@ const Login: React.FC <LoginProps> = ({onSignupClick}) => {
     <div>
       <h2>Login</h2>
       <form onSubmit={handleLogin}>
-      <label htmlFor="email">Email</label>
+        <label htmlFor="email">Email</label>
         <input
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Email"
-          name='Email'
+          name="Email"
           required
         />
         <label htmlFor="password">password</label>
@@ -49,12 +48,14 @@ const Login: React.FC <LoginProps> = ({onSignupClick}) => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
-          name='password'
+          name="password"
           required
         />
         <button type="submit">Login</button>
       </form>
-      <p>Don't have an account? <a onClick={onSignupClick}>Signup</a> </p>
+      <p>
+        Don't have an account? <a onClick={onSignupClick}>Signup</a>{' '}
+      </p>
       {error && <p>{error}</p>}
     </div>
   );

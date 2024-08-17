@@ -1,6 +1,5 @@
-// Modal.tsx
 import React from 'react';
-import './modal.css'
+import './modal.css';
 
 interface ModalProps {
   isOpen: boolean;
@@ -12,9 +11,11 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
   if (!isOpen) return null;
 
   return (
-    <div className='modal'>
-      <div className='content'>
-        <button className='close-btn' onClick={onClose}>&times;</button>
+    <div className="modal">
+      <div className="content">
+        <button className="close-btn" onClick={onClose}>
+          &times;
+        </button>
         {children}
       </div>
     </div>

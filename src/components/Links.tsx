@@ -3,7 +3,7 @@ import { collection, onSnapshot, deleteDoc, doc } from 'firebase/firestore';
 import { auth, db } from '../firebaseConfig';
 import { ShortenedUrl } from '../shortenedUrl';
 import { Timestamp } from 'firebase/firestore';
-import './links.css'; // Keep the existing CSS file import
+import './links.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCopy, faTrash, faDownload } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
@@ -29,7 +29,7 @@ const UserLinks: React.FC = () => {
           const linksData: ShortenedUrl[] = snapshot.docs.map((doc) => {
             const data = doc.data();
             return {
-              id: doc.id, // Store document ID for deletion
+              id: doc.id,
               Name: data.Name as string,
               originalUrl: data.LongUrl as string,
               shortenedUrl: data.shortUrl as string,

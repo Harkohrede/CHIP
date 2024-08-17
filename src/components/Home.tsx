@@ -1,4 +1,3 @@
-// App.tsx
 import React, { useState } from 'react';
 import Modal from './Modal';
 import Login from './Login';
@@ -20,7 +19,6 @@ const App: React.FC = () => {
   };
 
   const closeModal = () => setIsModalOpen(false);
-
 
   return (
     <div className="container">

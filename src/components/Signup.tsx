@@ -1,4 +1,3 @@
-//signup
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
@@ -7,7 +6,6 @@ import { auth } from '../firebaseConfig';
 interface SignupProps {
   onLoginClick: () => void;
 }
-
 
 const Signup: React.FC<SignupProps> = ({ onLoginClick }) => {
   const [email, setEmail] = useState('');
@@ -43,23 +41,23 @@ const Signup: React.FC<SignupProps> = ({ onLoginClick }) => {
     <div>
       <h2>Signup</h2>
       <form onSubmit={handleSignup}>
-        <label htmlFor='email'>Email</label>
+        <label htmlFor="email">Email</label>
         <input
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Email"
-          name='email'
+          name="email"
           required
         />
-        <label htmlFor='password'>Username</label>
+        <label htmlFor="password">Username</label>
         <input
           type="text"
           value={userName}
           onChange={(e) => setUserName(e.target.value)}
           required
         />
-        <label htmlFor='password'>Password</label>
+        <label htmlFor="password">Password</label>
         <input
           type="password"
           value={password}
@@ -69,7 +67,9 @@ const Signup: React.FC<SignupProps> = ({ onLoginClick }) => {
         />
         <button type="submit">Signup</button>
       </form>
-      <p>Already have an account? <a onClick={onLoginClick}>Login</a></p>
+      <p>
+        Already have an account? <a onClick={onLoginClick}>Login</a>
+      </p>
       {error && <p>{error}</p>}
     </div>
   );

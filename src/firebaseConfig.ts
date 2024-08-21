@@ -5,13 +5,13 @@ import { getAnalytics } from 'firebase/analytics';
 import { getStorage } from 'firebase/storage';
 
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY || process.env.VITE_FIREBASE_API_KEY,
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || process.env.VITE_FIREBASE_AUTH_DOMAIN,
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || process.env.VITE_FIREBASE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || process.env.VITE_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID || process.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_FIREBASE_APP_ID || process.env.VITE_FIREBASE_APP_ID,
-  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID || process.env.VITE_FIREBASE_MEASUREMENT_ID,
+  apiKey: "AIzaSyBp4JaqMTd02vs2siOq-ij6Pig6NgT21Ak",
+  authDomain: "chip-fb3c6.firebaseapp.com",
+  projectId: "chip-fb3c6",
+  storageBucket: "chip-fb3c6.appspot.com",
+  messagingSenderId:"857278660448",
+  appId: "1:857278660448:web:4f054a58411845104fa805",
+  measurementId: "G-PXZ27Q5BEK",
 };
 
 // Initializing Firebase
